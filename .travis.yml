@@ -6,7 +6,6 @@ env:
   - RELEASE_TAG="release-$TRAVIS_BUILD_NUMBER"
 if: tag IS blank
 
-
 before_install:
   - chmod +x gradlew
 
