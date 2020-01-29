@@ -6,12 +6,10 @@ env:
   - RELEASE_TAG="release-$TRAVIS_BUILD_NUMBER"
 if: tag IS blank
 
-<<<<<<< HEAD
+
 before_install:
   - chmod +x gradlew
 
-=======
->>>>>>> d921f90... Add task for migrating databases
 jobs:
   include:
     - stage: build and publish
