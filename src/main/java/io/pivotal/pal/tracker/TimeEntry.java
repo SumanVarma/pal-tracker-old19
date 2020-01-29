@@ -7,6 +7,7 @@ public class TimeEntry{
     private long projectId;
     private long userId;
     private LocalDate date;
+    private int hours;
 
     public TimeEntry(){
 
@@ -28,7 +29,7 @@ public class TimeEntry{
         this.hours = hours;
     }
 
-    private int hours;
+
 
     public long getId() {
         return id;
@@ -85,5 +86,16 @@ public class TimeEntry{
     @Override
     public int hashCode() {
         return Objects.hash(getId(), getProjectId(), getUserId(), getDate(), getHours());
+    }
+
+    @Override
+    public String toString() {
+        return "TimeEntry{" +
+                "id=" + id +
+                ", projectId=" + projectId +
+                ", userId=" + userId +
+                ", date=" + date +
+                ", hours=" + hours +
+                '}';
     }
 }

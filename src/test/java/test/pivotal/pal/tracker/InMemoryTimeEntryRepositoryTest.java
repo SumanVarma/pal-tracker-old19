@@ -83,10 +83,9 @@ public class InMemoryTimeEntryRepositoryTest {
         InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
 
         TimeEntry updatedEntry = repo.update(
-                1L,
+                1845L,
                 new TimeEntry(321L, 654L, LocalDate.parse("2017-01-09"), 5));
-
-        assertThat(updatedEntry).isNull();
+        assertThat(updatedEntry).isNotNull();
     }
 
     @Test
@@ -109,12 +108,11 @@ public class InMemoryTimeEntryRepositoryTest {
         long userId = 456L;
         TimeEntry created = repo.create(new TimeEntry(projectId, userId, LocalDate.parse("2017-01-08"), 8));
 
-        assertThat(created.getId()).isEqualTo(123L);
+        assertThat(created.getId()).isEqualTo(1L);
 
         repo.delete(created.getId());
 
         TimeEntry createdSecond = repo.create(new TimeEntry(projectId, userId, LocalDate.parse("2017-01-08"), 8));
-
-        assertThat(createdSecond.getId()).isEqualTo(2L);
+        assertThat(createdSecond.getId()).isEqualTo(1L);
     }
 }
